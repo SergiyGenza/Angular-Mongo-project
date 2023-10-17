@@ -1,10 +1,10 @@
 <header>
   <div class="container">
-    <a routerlink="/" class="logo">Food store!</a>
+    <a routerLink="/" class="logo">Food store!</a>
     <nav>
       <ul>
         <li>
-          <a routerLink="/ogin">Login</a>
+          <a routerLink="/login">Login</a>
         </li>
         <li class="menu-container">
           <a routerLink="/dashboard">John</a>
@@ -16,7 +16,7 @@
         </li>
         <li>
           <a routerLink="/cart-page">
-            Cart <span>3</span>
+            Cart <span *ngIf="cartQuantity">{{cartQuantity}}</span>
           </a>
         </li>
       </ul>
