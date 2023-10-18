@@ -11,6 +11,7 @@ import { FoodPageComponent } from './common/components/page/food-page/food-page.
 import { TagsComponent } from './common/components/partials/tags/tags.component';
 import { CartPageComponent } from './common/components/page/cart-page/cart-page.component';
 import { TitleComponent } from './common/components/partials/title/title.component';
+import { NotFoundComponent } from './common/components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TitleComponent } from './common/components/partials/title/title.compone
     FoodPageComponent,
     TagsComponent,
     CartPageComponent,
-    TitleComponent
+    TitleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

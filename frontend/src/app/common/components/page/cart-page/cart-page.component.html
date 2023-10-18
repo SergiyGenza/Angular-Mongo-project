@@ -1,6 +1,8 @@
 <app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
-
-<div class="container">
+<!-- need add <ng-template></ng-template> -->
+<app-not-found [visible]="!cart || !cart.items.length" notFoundMassage="Cart page is empty"
+  resetLinkText="Go to Home Page"></app-not-found>
+<div class="container" *ngIf="cart && cart.items.length">
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div class="">
