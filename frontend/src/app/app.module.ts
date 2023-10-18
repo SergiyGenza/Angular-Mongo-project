@@ -12,6 +12,8 @@ import { TagsComponent } from './common/components/partials/tags/tags.component'
 import { CartPageComponent } from './common/components/page/cart-page/cart-page.component';
 import { TitleComponent } from './common/components/partials/title/title.component';
 import { NotFoundComponent } from './common/components/partials/not-found/not-found.component';
+import { LoginPageComponent } from './common/components/page/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { NotFoundComponent } from './common/components/partials/not-found/not-fo
     TagsComponent,
     CartPageComponent,
     TitleComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RatingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
