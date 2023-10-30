@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="details">
+    <app-title title="Login"></app-title>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <app-text-input [control]="fc['email']" [showErrors]="isSubmitted" type="email" label="Email"></app-text-input>
+      <app-text-input [control]="fc['password']" [showErrors]="isSubmitted" type="password"
+        label="Password"></app-text-input>
+      <app-default-button text="Login"></app-default-button>
+    </form>
+  </div>
+</div>
