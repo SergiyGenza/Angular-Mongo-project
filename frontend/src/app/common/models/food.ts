@@ -8,5 +8,4 @@ export class Food {
   imgUrl!: string;
   origins!: string[];
   cookTime!: string;
-  
 }
