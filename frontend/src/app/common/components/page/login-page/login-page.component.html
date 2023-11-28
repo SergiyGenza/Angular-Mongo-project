@@ -6,6 +6,13 @@
       <app-text-input [control]="fc['password']" [showErrors]="isSubmitted" type="password"
         label="Password"></app-text-input>
       <app-default-button text="Login"></app-default-button>
+
+      <div class="register">
+        New user? &nbsp;
+        <a routerLink="/register" [queryParams]="{returnUrl : returnUrl}">
+          Register here
+        </a>
+      </div>
     </form>
   </div>
 </div>

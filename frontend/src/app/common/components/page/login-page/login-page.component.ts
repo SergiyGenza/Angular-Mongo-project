@@ -38,8 +38,11 @@ export class LoginPageComponent implements OnInit {
     if (this.loginForm.invalid) return;
 
     this.userService.login({
+      address: '',
+      name: '',
       email: this.fc['email'].value,
       password: this.fc['password'].value,
+      confirmPassword: ''
     }).subscribe(() => {
       this.router.navigateByUrl(this.returnUrl);
     })
