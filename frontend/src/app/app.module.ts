@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/layout/header/header.component';
@@ -20,7 +20,9 @@ import { InputContainerComponent } from './common/components/partials/input-cont
 import { InputValidationComponent } from './common/components/partials/input-validation/input-validation.component';
 import { TextInputComponent } from './common/components/partials/text-input/text-input.component';
 import { DefaultButtonComponent } from './common/components/partials/default-button/default-button.component';
-import { RegisterPageComponent } from './common/components/page/register-page/register-page.component'
+import { RegisterPageComponent } from './common/components/page/register-page/register-page.component';
+import { LoadingComponent } from './common/components/partials/loading/loading.component'
+import { LoadingInterceptor } from './common/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { RegisterPageComponent } from './common/components/page/register-page/re
     InputValidationComponent,
     TextInputComponent,
     DefaultButtonComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,9 @@ import { RegisterPageComponent } from './common/components/page/register-page/re
       newestOnTop: false,
     }),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
