@@ -1,3 +1,4 @@
+import { LatLng } from "leaflet";
 import { CartItem } from "./cartItem";
 
 export class Order {
@@ -9,4 +10,5 @@ export class Order {
   paymentId!: string;
   createdAt!: string;
   status!: string;
+  addressLatLng?: LatLng;
 }
